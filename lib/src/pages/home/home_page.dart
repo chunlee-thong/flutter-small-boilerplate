@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_small_boilerplate/src/providers/loading_overlay_provider.dart';
-import 'package:flutter_small_boilerplate/src/utils/exception_handler.dart';
-import 'package:flutter_small_boilerplate/src/widgets/loading_overlay.dart';
+import '../../providers/loading_overlay_provider.dart';
+import '../../utils/exception_handler.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
 class HomePage extends StatefulWidget {
