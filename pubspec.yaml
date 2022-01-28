@@ -1,0 +1,29 @@
+name: flutter_small_boilerplate
+description: A boilerplate for small Flutter app.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.15.1 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  dio: ^4.0.4
+  flutter:
+    sdk: flutter
+  provider: ^6.0.2
+  sentry_flutter: ^6.2.2
+  shared_preferences: ^2.0.12
+  sura_flutter: ^0.5.1
+  sura_manager: ^0.2.1
+  url_launcher: ^6.0.18
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
