@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
 import 'package:sentry/sentry.dart';
 
 import '../widgets/ui_helper.dart';

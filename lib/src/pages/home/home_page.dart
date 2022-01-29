@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sura_flutter/sura_flutter.dart';
+
 import '../../providers/loading_overlay_provider.dart';
 import '../../utils/exception_handler.dart';
-import 'package:sura_flutter/sura_flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
