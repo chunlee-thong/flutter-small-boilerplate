@@ -11,9 +11,8 @@ void main() {
       (options) {
         options.dsn = '';
       },
+      appRunner: () => runApp(const MyApp()),
     );
-
-    runApp(const MyApp());
   }, (exception, stackTrace) async {
     await Sentry.captureException(exception, stackTrace: stackTrace);
   });
