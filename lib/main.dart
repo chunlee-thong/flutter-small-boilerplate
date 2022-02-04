@@ -7,6 +7,7 @@ import 'app.dart';
 
 void main() {
   runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
     await SentryFlutter.init(
       (options) {
         options.dsn = '';
