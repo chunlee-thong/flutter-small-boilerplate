@@ -19,6 +19,7 @@ dependencies:
   sura_flutter: ^0.5.1
   sura_manager: ^0.2.1
   url_launcher: ^6.0.18
+  fluttertoast: ^8.0.8
 
 dev_dependencies:
   flutter_lints: ^1.0.0
