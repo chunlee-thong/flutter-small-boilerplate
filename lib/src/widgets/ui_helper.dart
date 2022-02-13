@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
-const emptySizedBox = SizedBox();
-
 class UIHelper {
   static Future showErrorDialog(BuildContext context, dynamic exception) async {
     String message = "";

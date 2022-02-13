@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
@@ -20,17 +21,22 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Home Page"),
       ),
       body: Center(
-        child: SuraAsyncButton(
-          child: const Text("Throw error"),
-          margin: const EdgeInsets.all(64),
-          onPressed: () async {
-            await ExceptionHandler.run(context, () async {
-              LoadingOverlayProvider.toggleLoading();
-              await Future.delayed(const Duration(seconds: 2));
-              throw "This is an error";
-            });
-            LoadingOverlayProvider.toggleLoading();
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SuraAsyncButton(
+              child: const Text("Throw error"),
+              margin: const EdgeInsets.all(64),
+              onPressed: () async {
+                await ExceptionHandler.run(context, () async {
+                  LoadingOverlayProvider.toggleLoading();
+                  await Future.delayed(const Duration(seconds: 2));
+                  throw "This is an error";
+                });
+                LoadingOverlayProvider.toggleLoading();
+              },
+            ),
+          ],
         ),
       ),
     );

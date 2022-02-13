@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_small_boilerplate/src/utils/logger.dart';
+import 'package:sura_flutter/sura_flutter.dart';
 
+import '../providers/loading_overlay_provider.dart';
 import 'app_theme_color.dart';
 
 const TextStyle kHeaderStyle = TextStyle(
@@ -37,4 +40,17 @@ extension StyleExtension on TextStyle {
   TextStyle get primary => copyWith(color: AppColor.primary);
   TextStyle get accent => copyWith(color: AppColor.accent);
   TextStyle get underline => copyWith(decoration: TextDecoration.underline);
+
+  TextStyle get responsive => copyWith(fontSize: _responsiveFontSize(fontSize ?? 14));
+}
+
+double _responsiveFontSize(double size) {
+  double width = LoadingOverlayProvider.context!.screenSize.width;
+  infoLog(width);
+  if (width > 1024) {
+    return size + 6;
+  } else if (width > 768) {
+    return size + 4;
+  }
+  return size;
 }
