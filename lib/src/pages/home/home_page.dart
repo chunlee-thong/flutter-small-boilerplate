@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_small_boilerplate/src/constant/text_style.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
 import '../../providers/loading_overlay_provider.dart';
@@ -35,6 +35,10 @@ class _HomePageState extends State<HomePage> {
                 });
                 LoadingOverlayProvider.toggleLoading();
               },
+            ),
+            Text(
+              "Some Responsive Text",
+              style: kTitleStyle.responsive,
             ),
           ],
         ),

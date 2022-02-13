@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_small_boilerplate/src/utils/logger.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
-import '../providers/loading_overlay_provider.dart';
 import 'app_theme_color.dart';
 
 const TextStyle kHeaderStyle = TextStyle(
@@ -45,12 +43,5 @@ extension StyleExtension on TextStyle {
 }
 
 double _responsiveFontSize(double size) {
-  double width = LoadingOverlayProvider.context!.screenSize.width;
-  infoLog(width);
-  if (width > 1024) {
-    return size + 6;
-  } else if (width > 768) {
-    return size + 4;
-  }
-  return size;
+  return SuraResponsive.value(size, size + 6, size + 4);
 }
