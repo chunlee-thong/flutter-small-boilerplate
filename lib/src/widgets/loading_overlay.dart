@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_small_boilerplate/src/utils/logger.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/loading_overlay_provider.dart';
@@ -19,6 +20,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
       create: (context) => LoadingOverlayProvider(),
       child: Builder(
         builder: (context) {
+          infoLog(MediaQuery.of(context).toString());
           LoadingOverlayProvider.init(context);
           return Stack(
             children: [
