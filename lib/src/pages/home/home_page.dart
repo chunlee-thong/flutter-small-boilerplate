@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               "Some Responsive Text",
-              style: kTitleStyle.responsive,
+              style: kTitleStyle.responsiveFontSize,
             ),
           ],
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sura_flutter/sura_flutter.dart';
 
 import 'app_theme_color.dart';
 
@@ -30,18 +29,6 @@ const TextStyle kOverLineStyle = TextStyle(
 );
 
 extension StyleExtension on TextStyle {
-  TextStyle get black => copyWith(color: Colors.black);
-  TextStyle get white => copyWith(color: Colors.white);
-  TextStyle get red => copyWith(color: Colors.red);
-  TextStyle get grey => copyWith(color: Colors.grey);
-  TextStyle get green => copyWith(color: Colors.green);
   TextStyle get primary => copyWith(color: AppColor.primary);
   TextStyle get accent => copyWith(color: AppColor.accent);
-  TextStyle get underline => copyWith(decoration: TextDecoration.underline);
-
-  TextStyle get responsive => copyWith(fontSize: _responsiveFontSize(fontSize ?? 14));
-}
-
-double _responsiveFontSize(double size) {
-  return SuraResponsive.value(size, size + 6, size + 4);
 }

@@ -39,7 +39,7 @@ class _AppWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).brightness == Brightness.dark ? Colors.grey.withOpacity(0.2) : Colors.black26;
+    final color = context.theme.brightness == Brightness.dark ? Colors.grey.withOpacity(0.2) : Colors.black26;
     LoadingOverlayProvider.init(context);
     return SuraResponsiveBuilder(
       child: Theme(
@@ -48,7 +48,7 @@ class _AppWrapper extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               minimumSize: Size(
                 double.infinity,
-                SuraResponsive.value(46, 64, 54),
+                SuraResponsive.value(44, 54, 64),
               ),
             ),
           ),
