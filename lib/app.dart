@@ -56,7 +56,7 @@ class _AppWrapper extends StatelessWidget {
               ),
             ),
             textTheme: theme.textTheme.copyWith(
-              labelLarge: theme.textTheme.button?.responsiveFontSize,
+              labelLarge: theme.textTheme.labelLarge?.responsiveFontSize,
               titleMedium: theme.textTheme.titleMedium?.responsiveFontSize,
               titleSmall: theme.textTheme.titleSmall?.responsiveFontSize,
               bodyMedium: theme.textTheme.bodyMedium?.responsiveFontSize,
