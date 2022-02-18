@@ -39,45 +39,48 @@ class _AppWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = context.theme.brightness == Brightness.dark ? Colors.grey.withOpacity(0.2) : Colors.black26;
     final ThemeData theme = context.theme;
+    final color = theme.brightness == Brightness.dark ? Colors.grey.withOpacity(0.2) : Colors.black26;
     LoadingOverlayProvider.init(context);
+
     return SuraResponsiveBuilder(
-      child: Theme(
-        data: theme.copyWith(
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              minimumSize: Size(
-                double.infinity,
-                SuraResponsive.value(44, 54, 64),
+      builder: (context) {
+        return Theme(
+          data: theme.copyWith(
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(
+                  64,
+                  SuraResponsive.value(44, 54, 64),
+                ),
               ),
             ),
-          ),
-          textTheme: theme.textTheme.copyWith(
-            button: theme.textTheme.button?.responsiveFontSize,
-            subtitle1: theme.textTheme.subtitle1?.responsiveFontSize,
-            subtitle2: theme.textTheme.subtitle2?.responsiveFontSize,
-            bodyMedium: theme.textTheme.bodyMedium?.responsiveFontSize,
-            bodySmall: theme.textTheme.bodySmall?.responsiveFontSize,
-          ),
-        ),
-        child: Stack(
-          children: [
-            child,
-            Consumer<LoadingOverlayProvider>(
-              builder: (context, provider, child) {
-                if (provider.isLoading) {
-                  return Container(
-                    child: const Center(child: CircularProgressIndicator()),
-                    color: color,
-                  );
-                }
-                return emptySizedBox;
-              },
+            textTheme: theme.textTheme.copyWith(
+              labelLarge: theme.textTheme.button?.responsiveFontSize,
+              titleMedium: theme.textTheme.titleMedium?.responsiveFontSize,
+              titleSmall: theme.textTheme.titleSmall?.responsiveFontSize,
+              bodyMedium: theme.textTheme.bodyMedium?.responsiveFontSize,
+              bodySmall: theme.textTheme.bodySmall?.responsiveFontSize,
             ),
-          ],
-        ),
-      ),
+          ),
+          child: Stack(
+            children: [
+              child,
+              Consumer<LoadingOverlayProvider>(
+                builder: (context, provider, child) {
+                  if (provider.isLoading) {
+                    return Container(
+                      child: const Center(child: CircularProgressIndicator()),
+                      color: color,
+                    );
+                  }
+                  return emptySizedBox;
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

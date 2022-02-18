@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SuraAsyncButton(
+              fullWidth: false,
               child: const Text("Throw error"),
               margin: const EdgeInsets.all(64),
               onPressed: () async {
