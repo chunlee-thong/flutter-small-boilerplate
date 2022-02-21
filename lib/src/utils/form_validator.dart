@@ -3,5 +3,6 @@ class FormValidator {
     if (value == null || value.isEmpty) {
       return "Please input ${field ?? "a value"}";
     }
+    return null;
   }
 }

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sentry/sentry.dart';
 
@@ -18,7 +19,7 @@ class ExceptionHandler {
       if (context != null) {
         UIHelper.showErrorDialog(context, exception);
       }
-      recordError(message: exception, stackTrace: stackTrace);
+      recordError(exception, stackTrace: stackTrace);
       onError?.call(exception);
       return null;
     } finally {
@@ -26,15 +27,14 @@ class ExceptionHandler {
     }
   }
 
-  ///Record error to Analytic or Crashlytic
-  static void recordError({required message, dynamic stackTrace}) {
-    Sentry.captureException(message, stackTrace: stackTrace);
+  static void recordError(dynamic exception, {StackTrace? stackTrace}) {
+    stackTrace ??= exception is Error ? exception.stackTrace : null;
+    if (kReleaseMode) {
+      Sentry.captureException(exception, stackTrace: stackTrace);
+    }
   }
 
   static void handleManagerError(dynamic exception, BuildContext context) {
-    recordError(
-      message: exception,
-      stackTrace: exception.stackTrace,
-    );
+    recordError(exception);
   }
 }
