@@ -3,7 +3,7 @@ import 'package:sura_flutter/sura_flutter.dart';
 
 import '../../constant/text_style.dart';
 import '../../utils/exception_handler.dart';
-import '../../widgets/overlay_loading.dart';
+import '../../widgets/loading_overlay.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
