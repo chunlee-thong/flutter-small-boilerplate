@@ -4,8 +4,8 @@ import 'package:sura_flutter/sura_flutter.dart';
 
 import 'src/constant/app_theme_color.dart';
 import 'src/pages/home/home_page.dart';
-import 'src/providers/loading_overlay_provider.dart';
 import 'src/utils/exception_handler.dart';
+import 'src/widgets/overlay_loading.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -40,9 +40,6 @@ class _AppWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = context.theme;
-    final color = theme.brightness == Brightness.dark ? Colors.grey.withOpacity(0.2) : Colors.black26;
-    LoadingOverlayProvider.init(context);
-
     return SuraResponsiveBuilder(
       builder: (context) {
         return Theme(
@@ -63,22 +60,7 @@ class _AppWrapper extends StatelessWidget {
               bodySmall: theme.textTheme.bodySmall?.responsiveFontSize,
             ),
           ),
-          child: Stack(
-            children: [
-              child,
-              Consumer<LoadingOverlayProvider>(
-                builder: (context, provider, child) {
-                  if (provider.isLoading) {
-                    return Container(
-                      child: const Center(child: CircularProgressIndicator()),
-                      color: color,
-                    );
-                  }
-                  return emptySizedBox;
-                },
-              ),
-            ],
-          ),
+          child: LoadingOverlayBuilder(child: child),
         );
       },
     );

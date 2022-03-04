@@ -7,12 +7,9 @@ import 'package:sentry/sentry.dart';
 import '../widgets/ui_helper.dart';
 
 class ExceptionHandler {
-  static Future<T?> run<T>(
-    BuildContext? context,
-    FutureOr<T> Function() function, {
-    void Function(dynamic)? onError,
-    VoidCallback? onDone,
-  }) async {
+  ///Run the try/catch method
+  static Future<T?> run<T>(BuildContext? context, FutureOr<T> Function() function,
+      {void Function(dynamic)? onError, VoidCallback? onDone}) async {
     try {
       return await function();
     } catch (exception, stackTrace) {

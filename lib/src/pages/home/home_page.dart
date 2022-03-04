@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_small_boilerplate/src/constant/text_style.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
-import '../../providers/loading_overlay_provider.dart';
+import '../../constant/text_style.dart';
 import '../../utils/exception_handler.dart';
+import '../../widgets/overlay_loading.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,19 +24,21 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SuraAsyncButton(
-              fullWidth: false,
+            ElevatedButton(
               child: const Text("Throw error"),
-              margin: const EdgeInsets.all(64),
               onPressed: () async {
-                await ExceptionHandler.run(context, () async {
-                  LoadingOverlayProvider.toggleLoading();
-                  await Future.delayed(const Duration(seconds: 2));
-                  throw "This is an error";
-                });
+                await ExceptionHandler.run(
+                  context,
+                  () async {
+                    LoadingOverlayProvider.toggleLoading();
+                    await Future.delayed(const Duration(seconds: 2));
+                    throw "This is an error";
+                  },
+                );
                 LoadingOverlayProvider.toggleLoading();
               },
             ),
+            const SpaceY(32),
             Text(
               "Some Responsive Text",
               style: kTitleStyle.responsiveFontSize,

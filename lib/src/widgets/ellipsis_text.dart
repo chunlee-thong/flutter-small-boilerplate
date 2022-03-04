@@ -6,6 +6,7 @@ class EllipsisText extends StatelessWidget {
   final int maxLines;
   final TextAlign? textAlign;
 
+  ///Nullable Text widget
   const EllipsisText(
     this.content, {
     Key? key,
