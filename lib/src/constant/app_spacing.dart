@@ -5,8 +5,8 @@ class AppSpacing {
   static const EdgeInsets pageSpacing = EdgeInsets.all(16);
 
   ///Responsive value for 8
-  static final double value8 = SuraResponsive.value(8, 14, 20);
+  static final double space8 = SuraResponsive.value(8, 14, 20);
 
   ///Responsive value for 16
-  static final double value16 = SuraResponsive.value(16, 22, 28);
+  static final double space16 = SuraResponsive.value(16, 22, 28);
 }
