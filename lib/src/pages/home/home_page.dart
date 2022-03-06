@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const SpaceY(32),
             Text(
-              "Some Responsive Text",
+              "Title but Responsive",
               style: kTitleStyle.responsiveFontSize,
             ),
           ],

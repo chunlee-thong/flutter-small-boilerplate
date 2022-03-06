@@ -8,8 +8,12 @@ import '../widgets/ui_helper.dart';
 
 class ExceptionHandler {
   ///Run the try/catch method
-  static Future<T?> run<T>(BuildContext? context, FutureOr<T> Function() function,
-      {void Function(dynamic)? onError, VoidCallback? onDone}) async {
+  static Future<T?> run<T>(
+    BuildContext? context,
+    FutureOr<T> Function() function, {
+    void Function(dynamic)? onError,
+    VoidCallback? onDone,
+  }) async {
     try {
       return await function();
     } catch (exception, stackTrace) {
@@ -26,7 +30,7 @@ class ExceptionHandler {
 
   static void recordError(dynamic exception, {StackTrace? stackTrace}) {
     stackTrace ??= exception is Error ? exception.stackTrace : null;
-    if (kReleaseMode) {
+    if (kDebugMode) {
       Sentry.captureException(exception, stackTrace: stackTrace);
     }
   }
