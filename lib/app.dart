@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => LoadingOverlayProvider()),
-      ],
+      providers: const [],
       child: SuraProvider(
         onFutureManagerError: ExceptionHandler.handleManagerError,
         child: MaterialApp(
@@ -48,7 +46,7 @@ class _AppWrapper extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(
                   64,
-                  SuraResponsive.value(44, 54, 64),
+                  SuraResponsive.value(40, 54, 64),
                 ),
               ),
             ),

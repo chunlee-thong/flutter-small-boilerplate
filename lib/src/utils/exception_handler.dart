@@ -30,7 +30,7 @@ class ExceptionHandler {
 
   static void recordError(dynamic exception, {StackTrace? stackTrace}) {
     stackTrace ??= exception is Error ? exception.stackTrace : null;
-    if (kDebugMode) {
+    if (kReleaseMode) {
       Sentry.captureException(exception, stackTrace: stackTrace);
     }
   }
