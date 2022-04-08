@@ -3,7 +3,6 @@ import 'package:sura_flutter/sura_flutter.dart';
 
 import '../../constant/text_style.dart';
 import '../../utils/exception_handler.dart';
-import '../../widgets/loading_overlay.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,12 +29,12 @@ class _HomePageState extends State<HomePage> {
                 await ExceptionHandler.run(
                   context,
                   () async {
-                    LoadingOverlayProvider.toggleLoading();
+                    LoadingOverlayProvider.toggle();
                     await Future.delayed(const Duration(seconds: 2));
                     throw "This is an error";
                   },
                 );
-                LoadingOverlayProvider.toggleLoading();
+                LoadingOverlayProvider.toggle();
               },
             ),
             const SpaceY(32),
