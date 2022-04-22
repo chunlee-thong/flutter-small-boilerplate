@@ -45,7 +45,7 @@ class _AppWrapper extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(
                   64,
-                  SuraResponsive.value(40, 54, 64),
+                  SuraResponsive.value(42, 52, 62),
                 ),
               ),
             ),

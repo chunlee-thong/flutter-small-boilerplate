@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
@@ -10,7 +11,7 @@ void main() {
     WidgetsFlutterBinding.ensureInitialized();
     await SentryFlutter.init(
       (options) {
-        options.dsn = '';
+        options.dsn = kDebugMode ? '' : '';
       },
       appRunner: () => runApp(const MyApp()),
     );
