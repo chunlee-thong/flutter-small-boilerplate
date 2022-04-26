@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sura_flutter/sura_flutter.dart';
+import 'package:sura_manager/sura_manager.dart';
 
 import 'src/constant/app_theme_color.dart';
 import 'src/pages/home/home_page.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: const [],
-      child: SuraProvider(
+      child: SuraManagerProvider(
         onFutureManagerError: ExceptionHandler.handleManagerError,
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

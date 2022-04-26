@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sentry/sentry.dart';
+import 'package:sura_manager/sura_manager.dart';
 
 import '../widgets/ui_helper.dart';
 
@@ -35,7 +36,7 @@ class ExceptionHandler {
     }
   }
 
-  static void handleManagerError(dynamic exception, BuildContext context) {
-    recordError(exception);
+  static void handleManagerError(FutureManagerError error, BuildContext context) {
+    recordError(error.exception);
   }
 }
