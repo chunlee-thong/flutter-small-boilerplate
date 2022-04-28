@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'app.dart';
+import 'src/utils/exception_handler.dart';
 
 void main() {
   runZonedGuarded(() async {
@@ -16,6 +17,6 @@ void main() {
       appRunner: () => runApp(const MyApp()),
     );
   }, (exception, stackTrace) async {
-    await Sentry.captureException(exception, stackTrace: stackTrace);
+    ExceptionHandler.recordError(exception, stackTrace: stackTrace);
   });
 }
