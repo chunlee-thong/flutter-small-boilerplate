@@ -2,19 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sura_flutter/sura_flutter.dart';
+import '../utils/app_utils.dart';
 
 class UIHelper {
   static Future showErrorDialog(BuildContext context, dynamic exception) async {
-    String message = "";
-    if (exception is PlatformException) {
-      message = exception.message ?? "";
-    }
-    if (message.isEmpty) {
-      message = exception.toString();
-    }
+    String errorMessage = AppUtils.getReadableErrorMessage(exception);
     return await showDialog(
       context: context,
-      builder: (context) => SuraSimpleDialog(content: message, title: "Error"),
+      builder: (context) => SuraSimpleDialog(content: errorMessage, title: "Error"),
     );
   }
 
