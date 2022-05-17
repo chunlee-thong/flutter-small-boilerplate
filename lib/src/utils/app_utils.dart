@@ -1,7 +1,6 @@
-
+import 'package:flutter/services.dart';
 
 class AppUtils {
-    
   static String getReadableErrorMessage(Object exception) {
     String? errorMessage;
     if (exception is PlatformException) {
