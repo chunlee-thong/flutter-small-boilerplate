@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sura_flutter/sura_flutter.dart';
+
 import '../utils/app_utils.dart';
 
 class UIHelper {

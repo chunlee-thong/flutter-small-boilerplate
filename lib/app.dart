@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:future_manager/future_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:sura_flutter/sura_flutter.dart';
-import 'package:sura_manager/sura_manager.dart';
 
 import 'src/constant/app_theme_color.dart';
 import 'src/pages/home/home_page.dart';
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: const [],
-      child: SuraManagerProvider(
+      child: FutureManagerProvider(
         onFutureManagerError: ExceptionHandler.handleManagerError,
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -58,7 +58,7 @@ class _AppWrapper extends StatelessWidget {
               bodySmall: theme.textTheme.bodySmall?.responsiveFontSize,
             ),
           ),
-          child: LoadingOverlayBuilder(child: child),
+          child: LoadingOverlayProvider.builder(child: child),
         );
       },
     );

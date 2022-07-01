@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:future_manager/future_manager.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
 import '../../constant/text_style.dart';
@@ -12,6 +13,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  FutureManager<int> futureManager = FutureManager();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
