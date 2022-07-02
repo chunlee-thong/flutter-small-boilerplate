@@ -3,3 +3,6 @@ include: package:flutter_lints/flutter.yaml
 linter:
   rules:
     library_private_types_in_public_api: false
+    use_build_context_synchronously: false
+    sort_child_properties_last: false
+    depend_on_referenced_packages: false

@@ -17,7 +17,7 @@ dependencies:
   sentry_flutter: ^6.6.1
   shared_preferences: ^2.0.15
   sura_flutter: ^1.4.1
-  future_manager: ^0.0.1
+  future_manager: ^1.0.0
   url_launcher: ^6.1.4
   fluttertoast: ^8.0.9
   line_icons: ^2.0.1
